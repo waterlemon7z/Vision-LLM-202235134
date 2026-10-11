@@ -28,14 +28,14 @@ scores = np.array([85, 90, 100, 60, 90, 75, 90])
 std = np.std(scores)
 mean = np.mean(scores)
 
-np_arr_normalized = (scores - mean) / std
+np_arr_normalized = (scores - mean) / std #perform normalize
 print(np_arr_normalized)
 
 
 # TODO: NumPy 연산 함수를 사용하여 배열을 0.0 ~ 1.0 범위의 float32 배열로 변환
 # TODO: 최종 배열의 최솟값 = 0.0, 최종 배열의 최댓값 = 1.0
 scores = np.array([85, 90, 100, 60, 90, 75, 90], dtype=np.float32)
-np_arr_final = (scores - scores.min()) / (scores.max() - scores.min())
+np_arr_final = (scores - scores.min()) / (scores.max() - scores.min()) #MinMax normalize
 print(np_arr_final)
 print(np_arr_final.dtype)
 
