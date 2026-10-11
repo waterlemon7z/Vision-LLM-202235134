@@ -22,20 +22,19 @@ for idx, (student, score) in enumerate(zip(students, scores), start=1):
     if score >= 80:
         print(f'{idx}번 학생 {student} | 점수 {score}')
 
-scores = np.array([85, 90, 100, 60, 90, 75, 90])
-
+np_arr = np.array([1, 2, 3, 4, 5])
 # TODO: NumPy 연산 함수를 사용하여 배열을 정규화
-std = np.std(scores)
-mean = np.mean(scores)
+std = np.std(np_arr)
+mean = np.mean(np_arr)
 
-np_arr_normalized = (scores - mean) / std #perform normalize
+np_arr_normalized = (np_arr - np_arr.min()) / (np_arr.max() - np_arr.min())#perform normalize
 print(np_arr_normalized)
 
 
 # TODO: NumPy 연산 함수를 사용하여 배열을 0.0 ~ 1.0 범위의 float32 배열로 변환
 # TODO: 최종 배열의 최솟값 = 0.0, 최종 배열의 최댓값 = 1.0
-scores = np.array([85, 90, 100, 60, 90, 75, 90], dtype=np.float32)
-np_arr_final = (scores - scores.min()) / (scores.max() - scores.min()) #MinMax normalize
+np_arr = np.array(np_arr, dtype=np.float32)
+np_arr_final = (np_arr - np_arr.min()) / (np_arr.max() - np_arr.min()) #MinMax normalize
 print(np_arr_final)
 print(np_arr_final.dtype)
 
