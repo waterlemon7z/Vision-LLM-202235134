@@ -27,7 +27,7 @@ np_arr = np.array([1, 2, 3, 4, 5])
 std = np.std(np_arr)
 mean = np.mean(np_arr)
 
-np_arr_normalized = (np_arr - np_arr.min()) / (np_arr.max() - np_arr.min())#perform normalize
+np_arr_normalized = np_arr / np_arr.max()
 print(np_arr_normalized)
 
 
