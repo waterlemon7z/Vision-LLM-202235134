@@ -1,0 +1,9 @@
+[project]
+name = "vision-llm-202235134"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "ipykernel>=7.4.0",
+    "numpy>=2.5.3",
+    "pyyaml>=6.0.3",
+]
