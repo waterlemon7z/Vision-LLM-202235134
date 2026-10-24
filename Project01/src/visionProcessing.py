@@ -18,7 +18,7 @@ class HandVision:
     def __init__(self):
         model_path = (
             Path(__file__).resolve().parent
-            / "../../src/models/MediaPipe/hand_landmarker.task"
+            / "../models/MediaPipe/hand_landmarker.task"
         )
         options = vision.HandLandmarkerOptions(
             base_options=python.BaseOptions(

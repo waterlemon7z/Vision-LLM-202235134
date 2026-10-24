@@ -1,8 +1,5 @@
 /.idea/
 uv.lock
 pyproject.toml
-# MediaPipe models
-*.task
-
 # macOS
 .DS_Store
