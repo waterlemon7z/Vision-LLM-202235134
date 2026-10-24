@@ -19,8 +19,8 @@ def main():
     else:
         pipeline = (
             "v4l2src device=/dev/video0 ! "
-            "video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! "
-            "videoconvert ! video/x-raw,format=BGR ! "
+            "image/jpeg,width=1280,height=720,framerate=30/1 ! "
+            "jpegdec ! videoconvert ! video/x-raw,format=BGR ! "
             "queue leaky=downstream max-size-buffers=2 "
             "max-size-bytes=0 max-size-time=0 ! "
             "appsink drop=true max-buffers=1 sync=false"
@@ -30,7 +30,7 @@ def main():
     # 손 탐지하는 클래스 인스턴스 생성
     hand_vision = HandVision()
     # 게임 코어 시스템 생성
-    game = BasketGame(640,480)
+    game = BasketGame(1280,720)
     game.start()
     previous_time = time.perf_counter() # 치킨이 떨어지는 속도를 구현하기 위한 시간 변수
 
