@@ -58,4 +58,4 @@ Epoch 5/5 | Train loss: 0.5570 | Train accuracy: 80.93% | Test loss: 0.5881 | Te
 Total GPU training time: 113.49s
 ```
 ### HW3-4 Output
-![]()
+![](https://raw.githubusercontent.com/waterlemon7z/Vision-LLM-202235134/refs/heads/main/20261025/output/nms_output.png)
