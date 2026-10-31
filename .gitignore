@@ -3,3 +3,4 @@ uv.lock
 pyproject.toml
 # macOS
 .DS_Store
+src/datasets

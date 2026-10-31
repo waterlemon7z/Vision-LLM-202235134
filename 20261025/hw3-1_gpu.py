@@ -1,5 +1,9 @@
+"""
+ - Filename    :  hw3-1_gpu.py
+ - Author      :  MinSeok Choi
+ - Homework topic : GPU 가속 (잔상효과, Convolution2D)
+"""
 import time
-
 import cv2
 import numpy as np
 import cupy as cp
