@@ -4,3 +4,5 @@ pyproject.toml
 # macOS
 .DS_Store
 src/datasets
+/src/
+/whisper.cpp/
