@@ -3,6 +3,8 @@ uv.lock
 pyproject.toml
 # macOS
 .DS_Store
+src/calibration
 src/datasets
-/src/
+datasets
+/src/models
 /whisper.cpp/
