@@ -97,7 +97,7 @@ class ObjectTracker:
                 protected["last_seen"] = now
 
         for track_id, obj in list(self._objects.items()):
-            elapsed = now - obj["last_seen"]
+            elapsed = now - obj["last_seen"] # 마지막으로 감지되고 사라진 초
             if (obj["confirmed"] and elapsed >= self.disappear_seconds) or (
                     not obj["confirmed"] and elapsed > self.candidate_gap_seconds):
                 del self._objects[track_id]

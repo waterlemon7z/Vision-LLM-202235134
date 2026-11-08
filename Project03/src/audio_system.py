@@ -162,12 +162,22 @@ class AudioSystem:
                 "-l", "ko",
                 "--no-timestamps",
             ],
-            text=True,
+            # stdout(인식 문장)과 stderr(진단 로그)를 자동 디코딩하지 않는다.
+            text=False,
             capture_output=True,
-            check=True,
+            check=False,
         )
 
-        raw_text = result.stdout.strip()
+        if result.returncode != 0:
+            diagnostic = result.stderr.decode("utf-8", errors="replace").strip()
+            raise RuntimeError(f"Whisper 실행 실패 ({result.returncode}): {diagnostic}")
+        # 이상한 문구 제거
+        try:
+            raw_text = result.stdout.decode("utf-8").strip()
+        except UnicodeDecodeError:
+            # 깨진 문장을 복구한 척 Gemma에 넘기지 않고 재녹음을 유도한다.
+            print("STT 출력에 잘못된 UTF-8 문자가 있습니다. 다시 녹음해 주세요.")
+            return ""
         text = self.clean_stt_text(raw_text)
         if raw_text and not text:
             print(f"STT 무효 결과 무시: {raw_text}")
